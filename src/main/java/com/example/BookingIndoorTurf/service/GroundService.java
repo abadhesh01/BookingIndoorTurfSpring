@@ -29,9 +29,10 @@ public class GroundService {
         return groundrepo.save(gm);
     }
 
-    public GroundModel findGroundByGroundId(long id) {
+    public GroundModel findGroundByGroundId(long id) throws GroundNotFoundException, Exception{
         //return groundrepo.findGroundByGroundId(id);
-        return groundrepo.findById(id).orElseThrow(null);
+        //return groundrepo.findById(id).orElseThrow(null);
+        return groundrepo.findById(id).orElseThrow(()->new GroundNotFoundException(id));
     }
 
     public void deleteGround(long id) {

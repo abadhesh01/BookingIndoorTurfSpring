@@ -49,10 +49,11 @@ public class UserController {
     }
 
     @GetMapping(value="/ground/{id}")
-    public ResponseEntity<GroundModel> findGroundByGroundId(@PathVariable(value="id") Long id) throws GroundNotFoundException {
-     GroundModel ground=  groundserv.findGroundByGroundId(id);
+    public ResponseEntity<GroundModel> findGroundByGroundId(@PathVariable(value="id") Long id) throws GroundNotFoundException, Exception {
+    
+        GroundModel ground = groundserv.findGroundByGroundId(id);
 
-return new ResponseEntity<>(ground,HttpStatus.OK);
+     return new ResponseEntity<>(ground,HttpStatus.OK);
     }
 
 }

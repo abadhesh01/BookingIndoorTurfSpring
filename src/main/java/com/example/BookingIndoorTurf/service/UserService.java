@@ -31,8 +31,9 @@ public class UserService {
         List<GroundModel> all = groundrepo.findAll();
         return all;
     }
-    public GroundModel getGroundByGroundId(Long id) {
+    public GroundModel getGroundByGroundId(long id) throws GroundNotFoundException, Exception{
       //return (GroundModel) groundrepo.findGroundByGroundId(id);
-      return groundrepo.findById(id).orElseThrow(null);
+      //return groundrepo.findById(id).orElseThrow(null);
+      return groundrepo.findById(id).orElseThrow(()-> new GroundNotFoundException(id));
     }
 }
