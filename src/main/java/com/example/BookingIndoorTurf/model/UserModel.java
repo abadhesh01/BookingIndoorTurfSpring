@@ -3,12 +3,14 @@ package com.example.BookingIndoorTurf.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="UserTable")
+@Table(name = "User")
 public class UserModel {
-    @Id
+   
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String f_name;
+    
+	private String f_name;
     private String l_name;
     @Column(unique = true)
     private String mailId;

@@ -29,13 +29,14 @@ public class GroundService {
         return groundrepo.save(gm);
     }
 
-    public GroundModel findGroundByGroundId(Long id) {
-        return groundrepo.findGroundByGroundId(id);
-
+    public GroundModel findGroundByGroundId(long id) {
+        //return groundrepo.findGroundByGroundId(id);
+        return groundrepo.findById(id).orElseThrow(null);
     }
 
-    public void deleteGround(Long id) {
-        groundrepo.deleteGroundById(id);
+    public void deleteGround(long id) {
+        //groundrepo.deleteGroundById(id);
+    	groundrepo.deleteById(id);  
     }
 }
 

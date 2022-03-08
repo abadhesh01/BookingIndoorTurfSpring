@@ -4,12 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Ground")
 public class GroundModel {
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-    private Long GroundId;
+    
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long GroundId;
+    
     private String GroundName;
     private String GroundImageURL;
     private String GroundAddress;

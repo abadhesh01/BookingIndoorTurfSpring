@@ -32,6 +32,7 @@ public class UserService {
         return all;
     }
     public GroundModel getGroundByGroundId(Long id) {
-  return (GroundModel) groundrepo.findGroundByGroundId(id);
+      //return (GroundModel) groundrepo.findGroundByGroundId(id);
+      return groundrepo.findById(id).orElseThrow(null);
     }
 }

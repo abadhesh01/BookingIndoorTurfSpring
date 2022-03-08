@@ -1,5 +1,7 @@
 package com.example.BookingIndoorTurf.exception;
 
+import java.util.Date;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -7,7 +9,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class GroundNotFoundException extends Exception {
 
     private static final long serialVersionUID = 1L;
-    public GroundNotFoundException(String message) {
-        super(message);
-    }
+	
+    public GroundNotFoundException(long id) {
+		super("Ground with id="+id+" was not found!");
+	}
+   
 }
